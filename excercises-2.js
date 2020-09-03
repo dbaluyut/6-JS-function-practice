@@ -126,7 +126,8 @@ function reverse2(a) {
   let res = ""
   arr = a.split("")
   reversearr = arr.reverse()
-  res = reversearr.join()
+  res = reversearr.join("")
+  return res
 }
 
 console.assert(reverse("books") === "skoob")
