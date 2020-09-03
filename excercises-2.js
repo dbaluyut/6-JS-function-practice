@@ -72,42 +72,35 @@ console.assert(isVowel("2") === false)
 // the string "tothohisos isos fofunon".
 // ---------------------
 
-// function rovarspraket(a) {
-//   // Length of the String
-//   len = a.length
-//   res = ""
+function rovarspraket(script) {
+  // vowels = "aeiouAEIOU 0"
+  script = script.toString()
+  res = ""
+  arr = script.split("")
+  arr.forEach(function (a) {
+    if (
+      // a.includes(vowels)
+      a == "a" ||
+      a == "e" ||
+      a == "i" ||
+      a == "o" ||
+      a == "u" ||
+      a == "A" ||
+      a == "E" ||
+      a == "I" ||
+      a == "O" ||
+      a == "U" ||
+      a == " " ||
+      a == "0"
+    )
+      res += a
+    else {
+      res += a + "o" + a
+    }
+  })
 
-//   // Run till length of String
-//   for (i = 0; i < len; i++) {
-//     // checking if character is vowel,
-//     // if yes then append it as it is
-//     if (
-//       a.charAt(i) == "a" ||
-//       a.charAt(i) == "e" ||
-//       a.charAt(i) == "i" ||
-//       a.charAt(i) == "o" ||
-//       a.charAt(i) == "u"
-//     ) {
-//       res = res + a.charAt(i)
-//     }
-
-//     // if space then append as it is
-//     else if (a.charAt(i) == " ") {
-//       res = res + a.charAt(i)
-//     }
-
-//     // else double the consonant and
-//     // put o in between
-//     else {
-//       res = res + a.charAt(i) + "o" + a.charAt(i)
-//     }
-//   }
-
-//   // return translated String
-//   return res
-// }
-
-console.log(rovarspraket(0))
+  return res
+}
 
 console.assert(rovarspraket("a") === "a")
 console.assert(rovarspraket("b") === "bob")
@@ -127,6 +120,13 @@ function reverse(a) {
     res += a[i]
   }
   return res
+}
+
+function reverse2(a) {
+  let res = ""
+  arr = a.split("")
+  reversearr = arr.reverse()
+  res = reversearr.join()
 }
 
 console.assert(reverse("books") === "skoob")
